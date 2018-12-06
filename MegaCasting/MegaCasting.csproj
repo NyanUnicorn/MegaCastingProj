@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\MGCasting\**" />
+    <Content Remove="Models\MGCasting\**" />
+    <EmbeddedResource Remove="Models\MGCasting\**" />
+    <None Remove="Models\MGCasting\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\PageContents\PageOffers.cs" />
+    <Compile Remove="Models\PageContents\PageParagraph.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\PageTemplates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagaCasting.DataLib\MegaCasting.DataLib.csproj" />
+  </ItemGroup>
+
+</Project>

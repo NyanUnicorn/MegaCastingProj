@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C4B3B7B-38AE-4B38-B027-F58E25057918}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MegaProduction</RootNamespace>
+    <AssemblyName>MegaProduction</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon0_128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\MGProduction\ContractType.cs" />
+    <Compile Include="Model\MGProduction\Location.cs" />
+    <Compile Include="Model\MGCasting\MGCastingOffer.cs" />
+    <Compile Include="Model\MGCasting\MGCastingPack.cs" />
+    <Compile Include="Model\MGProduction\MGClient.cs" />
+    <Compile Include="Model\MGProduction\MGCurrentHeavyUser.cs" />
+    <Compile Include="Model\MGProduction\MGPurchase.cs" />
+    <Compile Include="Model\Structure\Tabs\WebViewerTabs\IndexWebtab.cs" />
+    <Compile Include="Model\Structure\Tabs\WebViewerTabs\OffersWebTab.cs" />
+    <Compile Include="Model\Structure\Tabs\WebViewerTabs\WebTab.cs" />
+    <Compile Include="Model\Tools\Connections\DBConnection.cs" />
+    <Compile Include="Model\Structure\Tabs\ClientManagerTab.cs" />
+    <Compile Include="Model\Structure\Tabs\HeavyUserManagerTab.cs" />
+    <Compile Include="Model\Structure\Tabs\OfferManagerTab.cs" />
+    <Compile Include="Model\Structure\Tabs\ITab.cs" />
+    <Compile Include="Model\Structure\Tabs\PartnerManagerTab.cs" />
+    <Compile Include="Model\Structure\Tabs\Tab.cs" />
+    <Compile Include="Model\Structure\Tabs\WebsiteManagerTab.cs" />
+    <Compile Include="Model\Structure\Tabs\WelcomeTab.cs" />
+    <Compile Include="Model\Tools\FileReader.cs" />
+    <Compile Include="Respositories\MGCasting\CastingOfferRep.cs" />
+    <Compile Include="Respositories\MGCasting\CastingPackRep.cs" />
+    <Compile Include="Model\MGCasting\MGTalent.cs" />
+    <Compile Include="Respositories\MGCasting\ContractRep.cs" />
+    <Compile Include="Respositories\MGCasting\PageRep.cs" />
+    <Compile Include="Respositories\MGCasting\TalentRep.cs" />
+    <Compile Include="Respositories\MGProduction\ClientRep.cs" />
+    <Compile Include="Respositories\Respository.cs" />
+    <Compile Include="View\AppWindow.xaml.cs">
+      <DependentUpon>AppWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\ListTemplates\ClientListBxItem.xaml.cs">
+      <DependentUpon>ClientListBxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\ListTemplates\OfferLister.xaml.cs">
+      <DependentUpon>OfferLister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\ListTemplates\OfferListItem.xaml.cs">
+      <DependentUpon>OfferListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCClientManager.xaml.cs">
+      <DependentUpon>UCClientManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCOfferManager.xaml.cs">
+      <DependentUpon>UCOfferManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCPartnerManager.xaml.cs">
+      <DependentUpon>UCPartnerManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCWebManFragments\Pages\ChooseElementContentType.xaml.cs">
+      <DependentUpon>ChooseElementContentType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCWebManFragments\Pages\PageContentHolder.xaml.cs">
+      <DependentUpon>PageContentHolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCWebManFragments\Pages\Offers.xaml.cs">
+      <DependentUpon>Offers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCWebManFragments\Pages\PageElement.xaml.cs">
+      <DependentUpon>PageElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Fragments\UCs\UCWebsiteManager.xaml.cs">
+      <DependentUpon>UCWebsiteManager.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controller\AppWindowCT.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\AppWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\ListTemplates\ClientListBxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\ListTemplates\OfferLister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\ListTemplates\OfferListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCClientManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCOfferManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCPartnerManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCWebManFragments\Pages\ChooseElementContentType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCWebManFragments\Pages\PageContentHolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCWebManFragments\Pages\Offers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCWebManFragments\Pages\PageElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Fragments\UCs\UCWebsiteManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Files\databaseconnection.conf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon0_128_wJR_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon0_128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\jobofferImg0-200.png" />
+    <Resource Include="Images\paraImg0-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\closeImg0-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addImg0-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\saveImg0-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\addImg0h-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\saveImg0h-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\closeImg0h-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DownSize.png" />
+    <Resource Include="Images\Maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
